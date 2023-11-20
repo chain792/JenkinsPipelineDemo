@@ -8,6 +8,7 @@ pipeline {
             }
         }
         stage('Build') {
+            when { tag 'release-*' }
             steps {
                 echo 'Building'
             }
@@ -41,6 +42,7 @@ pipeline {
             }
         }
         stage('Release') {
+            when { tag 'release-*' }
             steps {
                 echo 'Releasing'
                 withCredentials([[
