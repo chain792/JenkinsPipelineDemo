@@ -3,12 +3,12 @@ pipeline {
 
     stages {
         stage('Hello') {
-            when { tag 'release-*' }
             steps {
                 echo 'Hello from github'
             }
         }
         stage('Build') {
+            when { tag 'release-*' }
             steps {
                 echo 'Building'
             }
