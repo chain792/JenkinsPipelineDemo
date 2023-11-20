@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo 'Testing'
                 script {
-                    def url = 'https://test-env-jenkins-20231121.s3.ap-northeast-1.amazonaws.com/index.html'
+                    def url = 'https://test-env-jenkins-20231121.s3.ap-northeast-1.amazonaws.com/indsex.html'
                     def response = sh(script: "curl -s -o /dev/null -w '%{http_code}' '$url'", returnStdout: true)
 
                     if (response == '200') {
