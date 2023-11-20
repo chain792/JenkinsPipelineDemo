@@ -3,6 +3,7 @@ pipeline {
 
     stages {
         stage('Hello') {
+            when { tag 'release-*' }
             steps {
                 echo 'Hello from github'
             }
@@ -41,6 +42,7 @@ pipeline {
             }
         }
         stage('Release') {
+            when { tag 'release-*' }
             steps {
                 echo 'Releasing'
                 withCredentials([[
