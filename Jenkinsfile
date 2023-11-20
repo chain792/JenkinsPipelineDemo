@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello from github'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building'
